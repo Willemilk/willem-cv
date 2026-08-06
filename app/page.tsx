@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-const TELEFOON = "06 - XX XX XX XX";
+const TELEFOON = "06 40764274";
 
 const projecten = [
   {

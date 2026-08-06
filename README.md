@@ -3,13 +3,6 @@
 Next.js 15 (App Router, TypeScript). Donker, één pagina, scroll-animaties via
 native CSS scroll-timelines. Geen animatiebibliotheek nodig.
 
-## Wat jij nog moet doen
-
-1. Zet je foto in `public/` en noem hem **`cvimage.png`**.
-   Er staat nu een grijze placeholder — die overschrijf je gewoon.
-   Beste formaat: staand, ongeveer 800 x 1000 px.
-2. Vul je telefoonnummer in. Zoek in `app/page.tsx` op `06 - XX XX XX XX`.
-
 ## Terminal (VS Code)
 
 ```bash
