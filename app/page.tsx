@@ -114,7 +114,7 @@ export default function Home() {
               className="heroPhoto up"
               style={{ "--d": "380ms" } as React.CSSProperties}
             >
-              <img src="/cvimage.png" alt="Portretfoto van Willem de Wit" />
+              <img src="/cvimage.jpg" alt="Portretfoto van Willem de Wit" />
             </div>
           </div>
         </header>
