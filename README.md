@@ -1,7 +1,11 @@
 # CV-site Willem de Wit
 
-Next.js 15 (App Router, TypeScript). Donker, één pagina, scroll-animaties via
-native CSS scroll-timelines. Geen animatiebibliotheek nodig.
+Next.js (App Router, TypeScript). Twee pagina's, scroll-animaties via native
+CSS scroll-timelines. Geen animatiebibliotheek nodig.
+
+- `/` is de persoonlijke pagina: wie ik ben, sport, traject en wat ik meebreng.
+- `/development` is de pagina met de projecten, het werken met AI en de
+  vaardigheden.
 
 ## Terminal (VS Code)
 
@@ -34,6 +38,11 @@ herkent Next.js zelf. Elke push naar `main` deployt automatisch.
 
 ## Waar staat wat
 
-- `app/page.tsx` — alle tekst en gegevens, bovenin als lijsten
+- `app/content.ts` — alle gegevens: telefoon, e-mail, traject, projecten,
+  vaardigheden, sportcijfers en kwaliteiten. Tekst aanpassen doe je hier.
+- `app/page.tsx` — de startpagina
+- `app/development/page.tsx` — de development pagina
+- `app/Nav.tsx` — de balk bovenin, gedeeld door beide pagina's
+- `app/SiteEnd.tsx` — contact, naamblok en footer, gedeeld door beide pagina's
 - `app/globals.css` — kleuren, lettertypes, animaties (variabelen bovenaan)
 - `public/` — foto en CV-PDF

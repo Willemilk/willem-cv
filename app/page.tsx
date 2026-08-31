@@ -1,83 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 
-const TELEFOON = "06 40764274";
-
-const projecten = [
-  {
-    titel: "Old Nine Spirits",
-    link: "https://old-nine.com",
-    stack: "Next.js · Supabase · Vercel",
-    body: "Een complete webshop voor een drankmerk, met inloggen, bestellen en een beheerpagina voor de eigenaar. Zelf ontworpen, gebouwd en online gezet op een eigen domein.",
-  },
-  {
-    titel: "Groene Vingers",
-    link: null,
-    stack: "Next.js · schoolproject",
-    body: "Een chatbot voor een tuincentrum, gemaakt als opdracht op school.",
-  },
-];
-
-const traject = [
-  {
-    titel: "Software Development (MBO N4)",
-    sub: "Summa ICT, Eindhoven · leerjaar 3",
-    datum: "2023 — heden",
-    body: "Programmeren met onder andere C#, PHP en databases, en werken aan echte projecten voor opdrachtgevers.",
-  },
-  {
-    titel: "Software Developer (stage)",
-    sub: "ABC E-Business, Eindhoven · beoordeling: goed",
-    datum: "Sep 2025 — jan 2026",
-    body: "Een app gebouwd voor Microsoft Dynamics 365 Business Central die klanten automatisch controleert tegen internationale sanctielijsten. Met API's de lijsten opgehaald en de controles automatisch laten verlopen.",
-  },
-  {
-    titel: "Vakkenvuller",
-    sub: "Albert Heijn",
-    datum: "Aug 2022 — juli 2025",
-    body: "Naast school gewerkt in de winkel. Hier leerde ik op tijd komen, doorwerken en samenwerken.",
-  },
-];
-
-const vaardigheden = [
-  {
-    key: "Front-end",
-    items: ["React", "Next.js", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
-  },
-  {
-    key: "Back-end",
-    items: ["PHP", "Laravel", "Node.js", "C# / .NET", "REST API's"],
-  },
-  { key: "CMS & databases", items: ["WordPress", "Supabase", "MySQL"] },
-  {
-    key: "Tools",
-    items: ["Git / GitHub", "Vercel", "VS Code", "Claude Code"],
-    mark: ["Claude Code"],
-  },
-];
+import Link from "next/link";
+import Nav from "./Nav";
+import SiteEnd from "./SiteEnd";
+import { kwaliteiten, sportStats, traject } from "./content";
 
 export default function Home() {
   return (
     <>
       <div className="progress" aria-hidden="true" />
 
-      <nav className="nav">
-        <span className="navName">Willem de Wit</span>
-        <div className="navLinks">
-          <a href="#projecten">Projecten</a>
-          <a href="#ai">Werken met AI</a>
-          <a href="#traject">Traject</a>
-          <a href="#vaardigheden">Vaardigheden</a>
-        </div>
-        <a className="navMail" href="#contact">
-          Contact
-        </a>
-      </nav>
+      <Nav
+        huidig="home"
+        secties={[
+          { href: "#over", label: "Over mij" },
+          { href: "#sport", label: "Sport" },
+          { href: "#traject", label: "Traject" },
+          { href: "#meebrengen", label: "Wat ik meebreng" },
+        ]}
+      />
 
       <div className="wrap">
         {/* ---------------- Hero ---------------- */}
         <header className="hero">
           <div className="heroTop">
-            <span>Webdeveloper</span>
+            <span>Student Software Development</span>
             <span>Eindhoven, NL</span>
           </div>
 
@@ -92,17 +39,16 @@ export default function Home() {
 
           <div className="heroGrid">
             <div className="up" style={{ "--d": "480ms" } as React.CSSProperties}>
-              <p className="heroRole">
-                Student Software Development, derde jaar
-              </p>
+              <p className="heroRole">Student, sporter en aanpakker</p>
               <p className="heroText">
-                Ik bouw websites en webshops met Next.js, React en PHP, van de
-                voorkant tot de database. Een paar daarvan staan ook echt live.
-                Ik leer het meeste door dingen gewoon te maken.
+                Ik zit in het derde jaar van de opleiding Software Development
+                in Eindhoven. Daarnaast sta ik drie tot vier keer per week in de
+                sportschool en werkte ik bijna drie jaar in de winkel. Ik pak
+                dingen graag aan en maak ze af.
               </p>
               <div className="heroBtns">
-                <a className="btn btnSolid" href="#projecten">
-                  Bekijk mijn werk
+                <a className="btn btnSolid" href="#over">
+                  Meer over mij
                 </a>
                 <a className="btn btnLine" href="/cv-willem-de-wit.pdf" download>
                   Download cv
@@ -119,73 +65,60 @@ export default function Home() {
           </div>
         </header>
 
-        {/* ---------------- Projecten ---------------- */}
-        <section className="section" id="projecten">
+        {/* ---------------- Over mij ---------------- */}
+        <section className="section" id="over">
           <div className="reveal">
-            <p className="label">Projecten</p>
-            <h2 className="h2">Wat ik gebouwd heb</h2>
+            <p className="label">Over mij</p>
+            <h2 className="h2">Wie ik ben</h2>
           </div>
 
-          <div className="rows reveal">
-            {projecten.map((p, i) => {
-              const inner = (
-                <>
-                  <span className="rowNum">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="rowTitle">{p.titel}</h3>
-                    <p className="rowStack">{p.stack}</p>
-                  </div>
-                  <p className="rowBody">{p.body}</p>
-                  <span className="rowGo">
-                    {p.link ? "Bekijk live ↗" : "School"}
-                  </span>
-                </>
-              );
-
-              return p.link ? (
-                <a
-                  className="row"
-                  key={p.titel}
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div className="row" key={p.titel}>
-                  {inner}
-                </div>
-              );
-            })}
+          <div className="bandGrid reveal">
+            <p className="proza">
+              Ik ben Willem, ik woon in Eindhoven en ik zit in het derde jaar
+              van de opleiding Software Development op Summa ICT. Daarnaast ben
+              ik bijna drie jaar vakkenvuller geweest bij Albert Heijn. Daar
+              leerde ik op tijd komen, doorwerken als het druk is en
+              samenwerken met een team.
+            </p>
+            <p className="proza">
+              Buiten school en werk ben ik veel in de sportschool te vinden. Ik
+              hou van een vast ritme en van dingen die alleen met geduld beter
+              worden. Datzelfde geldt voor mijn projecten: ik leer het meeste
+              door iets gewoon te maken en het bij te schaven tot het klopt.
+            </p>
           </div>
         </section>
 
-        {/* ---------------- Werken met AI ---------------- */}
-        <section className="section band" id="ai">
-          <div className="bandGrid">
-            <div className="reveal">
-              <p className="label">Werken met AI</p>
-              <h2 className="h2" style={{ marginBottom: 0 }}>
-                Claude Code hoort bij mijn gereedschap
-              </h2>
+        {/* ---------------- Sport ---------------- */}
+        <section className="section" id="sport">
+          <div className="reveal">
+            <p className="label">Sport</p>
+            <h2 className="h2">De sportschool hoort bij mijn week</h2>
+          </div>
+
+          <div className="reveal">
+            <div className="bandGrid">
+              <p className="proza">
+                Sinds eind 2023 train ik drie tot vier keer per week. Wat begon
+                als iets ernaast is een vaste gewoonte geworden. Ik plan het in,
+                ik ga ook op de dagen dat ik er geen zin in heb, en juist daar
+                zit voor mij de winst.
+              </p>
+              <p className="proza">
+                Daarom spreekt werken in een sportschool me aan. Het is een
+                omgeving die ik ken en waar veel verschillende mensen over de
+                vloer komen. Ik weet nog goed hoe het is om er als beginner
+                binnen te lopen, en ik help anderen graag op weg.
+              </p>
             </div>
-            <div className="bandText reveal">
-              <p>
-                Ik werk dagelijks met Claude en Claude Code en gebruik dat in
-                vrijwel al mijn projecten. Bij Old Nine Spirits zet ik het in om
-                nieuwe functies te bouwen, bugs op te sporen en de beveiliging
-                van mijn database na te lopen.
-              </p>
-              <p>
-                Ik laat er geen code door schrijven die ik zelf niet begrijp. Ik
-                lees mee, controleer wat er verandert en werk met Git, zodat ik
-                altijd terug kan naar een werkende versie. Zo gaat het
-                routinewerk een stuk sneller en houd ik tijd over voor de dingen
-                die er echt toe doen.
-              </p>
+
+            <div className="stats">
+              {sportStats.map((s) => (
+                <div className="stat" key={s.num}>
+                  <p className="statNum">{s.num}</p>
+                  <p className="statLabel">{s.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -212,65 +145,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------------- Vaardigheden ---------------- */}
-        <section className="section" id="vaardigheden">
+        {/* ---------------- Wat ik meebreng ---------------- */}
+        <section className="section" id="meebrengen">
           <div className="reveal">
-            <p className="label">Vaardigheden</p>
-            <h2 className="h2">Waar ik mee werk</h2>
+            <p className="label">Wat ik meebreng</p>
+            <h2 className="h2">Waar je op kunt rekenen</h2>
           </div>
 
           <div className="reveal">
-            {vaardigheden.map((g) => (
-              <div className="skillRow" key={g.key}>
-                <p className="skillKey">{g.key}</p>
-                <div className="chips">
-                  {g.items.map((item) => (
-                    <span
-                      className={
-                        g.mark?.includes(item) ? "chip chipMark" : "chip"
-                      }
-                      key={item}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+            {kwaliteiten.map((k) => (
+              <div className="qual" key={k.key}>
+                <p className="qualKey">{k.key}</p>
+                <p className="qualBody">{k.body}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ---------------- Contact ---------------- */}
-        <section className="contact" id="contact">
-          <div className="reveal">
-            <p className="label">Contact</p>
-            <a className="contactMail" href="mailto:wjpmdewit@icloud.com">
-              wjpmdewit@icloud.com
-            </a>
-            <div className="contactMeta">
-              <span>{TELEFOON}</span>
-              <a
-                href="https://github.com/Willemilk"
-                target="_blank"
-                rel="noreferrer"
-              >
-                github.com/Willemilk
-              </a>
-              <a href="/cv-willem-de-wit.pdf" download>
-                Download cv
-              </a>
+        {/* ---------------- Naar de development pagina ---------------- */}
+        <section className="section">
+          <div className="teaserBox reveal">
+            <p className="label">Ook goed om te weten</p>
+            <h2 className="h2" style={{ marginBottom: 18 }}>
+              Ik bouw ook websites
+            </h2>
+            <p className="proza teaserText">
+              Naast school en de sportschool maak ik websites en webshops. Een
+              paar daarvan staan echt online. Wil je dat zien, dan staat het op
+              een eigen pagina.
+            </p>
+            <div className="heroBtns">
+              <Link className="btn btnSolid" href="/development">
+                Bekijk mijn projecten
+              </Link>
             </div>
           </div>
         </section>
 
-        <div className="footMark">
-          <span>Willem de Wit</span>
-        </div>
-
-        <footer className="foot">
-          <span>Eindhoven, Nederland</span>
-          <span>Gebouwd met Next.js</span>
-        </footer>
+        <SiteEnd />
       </div>
     </>
   );

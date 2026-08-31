@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Willem de Wit — Webdeveloper",
+  title: "Willem de Wit — Eindhoven",
   description:
-    "Derdejaars student Software Development uit Eindhoven. Ik bouw websites en webshops met Next.js, React en PHP.",
+    "Willem de Wit uit Eindhoven. Derdejaars student Software Development, drie tot vier keer per week in de sportschool en bijna drie jaar werkervaring naast school.",
 };
 
 export default function RootLayout({
