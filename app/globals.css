@@ -272,105 +272,6 @@ h3 {
   transform: scale(1.03);
 }
 
-/* ---------- Project rows ---------- */
-
-.rows {
-  border-top: 1px solid var(--ink-15);
-}
-
-.row {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1.1fr) auto;
-  gap: clamp(14px, 2.5vw, 34px);
-  align-items: baseline;
-  padding: clamp(20px, 2.6vw, 30px) 0;
-  border-bottom: 1px solid var(--ink-15);
-  position: relative;
-  transition: color 0.2s ease;
-}
-
-.row::before {
-  content: "";
-  position: absolute;
-  left: -12px;
-  right: -12px;
-  top: 0;
-  bottom: 0;
-  background: var(--blue);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.28s cubic-bezier(0.2, 0.75, 0.3, 1);
-  z-index: -1;
-}
-
-a.row:hover::before {
-  transform: scaleY(1);
-}
-
-a.row:hover {
-  color: var(--white);
-}
-
-.rowNum {
-  font-family: var(--display);
-  font-variation-settings: "wdth" 88;
-  font-weight: 600;
-  font-size: 13px;
-}
-
-.rowTitle {
-  font-variation-settings: "wdth" 110;
-  font-size: clamp(18px, 2.4vw, 27px);
-}
-
-.rowStack {
-  font-size: 13px;
-  opacity: 0.7;
-  margin-top: 6px;
-}
-
-.rowBody {
-  font-size: 15px;
-}
-
-.rowGo {
-  font-family: var(--display);
-  font-variation-settings: "wdth" 90;
-  font-weight: 600;
-  font-size: 12.5px;
-  letter-spacing: 0.1em;
-  white-space: nowrap;
-}
-
-/* ---------- Blue band ---------- */
-
-.band {
-  background: var(--blue);
-  color: var(--white);
-  margin: 0 calc(var(--pad) * -1);
-  padding: clamp(56px, 8vw, 104px) var(--pad);
-  border: none;
-}
-
-.band .label {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.bandGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 56px);
-}
-
-.bandText p {
-  font-size: clamp(16px, 1.9vw, 20px);
-  max-width: 54ch;
-}
-
-.bandText p + p {
-  margin-top: 18px;
-}
-
 /* ---------- Track ---------- */
 
 .track {
@@ -405,6 +306,10 @@ a.row:hover {
   gap: clamp(12px, 3vw, 34px);
   padding: clamp(20px, 2.6vw, 30px) 0;
   border-bottom: 1px solid var(--ink-15);
+}
+
+.stop:last-child {
+  border-bottom: none;
 }
 
 .stopDate {
@@ -472,12 +377,6 @@ a.row:hover {
 
 .chip:hover {
   border-color: var(--ink);
-}
-
-.chipMark {
-  border-color: var(--ink);
-  color: var(--ink);
-  font-weight: 600;
 }
 
 /* ---------- Contact ---------- */
@@ -613,27 +512,13 @@ a:focus-visible {
     display: none;
   }
 
-  .heroGrid,
-  .bandGrid {
+  .heroGrid {
     grid-template-columns: 1fr;
   }
 
   .heroPhoto {
     max-width: 280px;
     aspect-ratio: 1 / 1;
-  }
-
-  .row {
-    grid-template-columns: 30px minmax(0, 1fr);
-    row-gap: 8px;
-  }
-
-  .rowGo {
-    display: none;
-  }
-
-  .row > *:nth-child(3) {
-    grid-column: 2;
   }
 
   .stop,
@@ -686,43 +571,18 @@ a:focus-visible {
   max-width: 54ch;
 }
 
-/* ---------- Wat ik meebreng ---------- */
-
-.qual {
-  display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: clamp(12px, 3vw, 34px);
-  padding: 20px 0;
-  border-bottom: 1px solid var(--ink-15);
+.proza + .proza {
+  margin-top: 18px;
 }
 
-.qual:first-child {
-  border-top: 1px solid var(--ink-15);
+.tekstLink {
+  border-bottom: 1.5px solid var(--ink-15);
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.qualKey {
-  font-family: var(--display);
-  font-variation-settings: "wdth" 88;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-}
-
-.qualBody {
-  font-size: 15.5px;
-  max-width: 62ch;
-}
-
-/* ---------- Doorverwijzing ---------- */
-
-.teaserBox {
-  border: 1.5px solid var(--ink);
-  padding: clamp(24px, 4vw, 46px);
-}
-
-.teaserText {
-  margin-bottom: 26px;
+.tekstLink:hover {
+  color: var(--blue);
+  border-color: var(--blue);
 }
 
 /* ---------- Kop van een subpagina ---------- */
@@ -766,13 +626,6 @@ a:focus-visible {
 }
 
 /* ---------- Responsive voor de nieuwe onderdelen ---------- */
-
-@media (max-width: 900px) {
-  .qual {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
 
 @media (max-width: 620px) {
   .nav {

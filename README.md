@@ -3,8 +3,8 @@
 Next.js (App Router, TypeScript). Twee pagina's, scroll-animaties via native
 CSS scroll-timelines. Geen animatiebibliotheek nodig.
 
-- `/` is de persoonlijke pagina: over mij, traject en wat ik meebreng.
-- `/development` is de pagina met de projecten, het werken met AI en de
+- `/` is de persoonlijke pagina: over mij en traject.
+- `/development` is de pagina met een verwijzing naar mijn GitHub en de
   vaardigheden.
 
 ## Terminal (VS Code)
@@ -38,8 +38,8 @@ herkent Next.js zelf. Elke push naar `main` deployt automatisch.
 
 ## Waar staat wat
 
-- `app/content.ts` — alle gegevens: telefoon, e-mail, traject, projecten,
-  vaardigheden en de blokken van "Wat ik meebreng". Tekst aanpassen doe je hier.
+- `app/content.ts` — alle gegevens: telefoon, e-mail, GitHub, traject en
+  vaardigheden. Tekst aanpassen doe je hier.
 - `app/page.tsx` — de startpagina
 - `app/development/page.tsx` — de development pagina
 - `app/Nav.tsx` — de balk bovenin, gedeeld door beide pagina's

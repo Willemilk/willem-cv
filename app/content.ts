@@ -2,21 +2,6 @@ export const TELEFOON = "06 40764274";
 export const EMAIL = "wjpmdewit@icloud.com";
 export const GITHUB = "https://github.com/Willemilk";
 
-export const kwaliteiten = [
-  {
-    key: "Opleiding",
-    body: "Derde jaar Software Development op Summa ICT in Eindhoven.",
-  },
-  {
-    key: "Stage",
-    body: "Stage gelopen bij ABC E-Business, afgerond met de beoordeling goed.",
-  },
-  {
-    key: "Werkervaring",
-    body: "Bijna drie jaar naast school gewerkt bij Albert Heijn.",
-  },
-];
-
 export const traject = [
   {
     titel: "Software Development (MBO N4)",
@@ -38,21 +23,6 @@ export const traject = [
   },
 ];
 
-export const projecten = [
-  {
-    titel: "Old Nine Spirits",
-    link: "https://old-nine.com",
-    stack: "Next.js · Supabase · Vercel",
-    body: "Een complete webshop voor een drankmerk, met inloggen, bestellen en een beheerpagina voor de eigenaar. Zelf ontworpen, gebouwd en online gezet op een eigen domein.",
-  },
-  {
-    titel: "Groene Vingers",
-    link: null,
-    stack: "Next.js · schoolproject",
-    body: "Een chatbot voor een tuincentrum, gemaakt als opdracht op school.",
-  },
-];
-
 export const vaardigheden = [
   {
     key: "Front-end",
@@ -63,9 +33,5 @@ export const vaardigheden = [
     items: ["PHP", "Laravel", "Node.js", "C# / .NET", "REST API's"],
   },
   { key: "CMS & databases", items: ["WordPress", "Supabase", "MySQL"] },
-  {
-    key: "Tools",
-    items: ["Git / GitHub", "Vercel", "VS Code", "Claude Code"],
-    mark: ["Claude Code"],
-  },
+  { key: "Tools", items: ["Git / GitHub", "Vercel", "VS Code"] },
 ];
