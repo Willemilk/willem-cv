@@ -2,28 +2,18 @@ export const TELEFOON = "06 40764274";
 export const EMAIL = "wjpmdewit@icloud.com";
 export const GITHUB = "https://github.com/Willemilk";
 
-export const sportStats = [
-  { num: "3 tot 4x", label: "per week in de sportschool" },
-  { num: "Eind 2023", label: "toen ik begon met trainen" },
-  { num: "Ruim 2 jaar", label: "een vast ritme volgehouden" },
-];
-
 export const kwaliteiten = [
   {
-    key: "Betrouwbaar",
-    body: "Bijna drie jaar naast school gewerkt bij Albert Heijn. Op tijd komen en afspraken nakomen zijn daar vanzelfsprekend geworden.",
+    key: "Opleiding",
+    body: "Derde jaar Software Development op Summa ICT in Eindhoven.",
   },
   {
-    key: "Doorzetten",
-    body: "Of het nu een schema in de sportschool is of een probleem in mijn code, ik leg het pas neer als het af is.",
+    key: "Stage",
+    body: "Stage gelopen bij ABC E-Business, afgerond met de beoordeling goed.",
   },
   {
-    key: "Samenwerken",
-    body: "Gewend om in een team te werken en om rustig te blijven als het druk wordt op de vloer.",
-  },
-  {
-    key: "Leergierig",
-    body: "Nieuwe systemen en programma's pak ik zelfstandig op. Ik vraag door tot ik snap hoe iets werkt.",
+    key: "Werkervaring",
+    body: "Bijna drie jaar naast school gewerkt bij Albert Heijn.",
   },
 ];
 
@@ -44,7 +34,7 @@ export const traject = [
     titel: "Vakkenvuller",
     sub: "Albert Heijn",
     datum: "Aug 2022 — juli 2025",
-    body: "Naast school gewerkt in de winkel. Hier leerde ik op tijd komen, doorwerken en samenwerken.",
+    body: "Naast school gewerkt in de winkel.",
   },
 ];
 

@@ -35,9 +35,9 @@ export default function Development() {
             className="pageIntro up"
             style={{ "--d": "180ms" } as React.CSSProperties}
           >
-            Naast school en de sportschool maak ik websites en webshops met
-            Next.js, React en PHP, van de voorkant tot de database. Een paar
-            daarvan staan ook echt live.
+            Naast school maak ik websites en webshops met Next.js, React en
+            PHP, van de voorkant tot de database. Een paar daarvan staan ook
+            echt live.
           </p>
         </header>
 
