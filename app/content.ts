@@ -1,6 +1,7 @@
 export const TELEFOON = "06 40764274";
 export const EMAIL = "wjpmdewit@icloud.com";
 export const GITHUB = "https://github.com/Willemilk";
+export const OLDNINE = "https://old-nine-next.vercel.app";
 
 export const traject = [
   {

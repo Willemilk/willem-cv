@@ -43,6 +43,11 @@ herkent Next.js zelf. Elke push naar `main` deployt automatisch.
 - `app/page.tsx` — de startpagina
 - `app/development/page.tsx` — de development pagina
 - `app/Nav.tsx` — de balk bovenin, gedeeld door beide pagina's
-- `app/SiteEnd.tsx` — contact, naamblok en footer, gedeeld door beide pagina's
+- `app/SiteEnd.tsx` — de gegevenslijst onderaan, gedeeld door beide pagina's
 - `app/globals.css` — kleuren, lettertypes, animaties (variabelen bovenaan)
 - `public/` — foto en CV-PDF
+- `cv/cv.html` — bron van het CV-PDF. Na een aanpassing opnieuw printen:
+
+```bash
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --no-pdf-header-footer --print-to-pdf="public/cv-willem-de-wit.pdf" "file:///$(pwd -W)/cv/cv.html"
+```

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "../Nav";
 import SiteEnd from "../SiteEnd";
-import { GITHUB, vaardigheden } from "../content";
+import { GITHUB, OLDNINE, vaardigheden } from "../content";
 
 export const metadata: Metadata = {
   title: "Development — Willem de Wit",
@@ -55,6 +55,18 @@ export default function Development() {
                 rel="noreferrer"
               >
                 github.com/Willemilk
+              </a>
+              .
+            </p>
+            <p className="proza">
+              Een webshop die ik gebouwd heb staat op{" "}
+              <a
+                className="tekstLink"
+                href={OLDNINE}
+                target="_blank"
+                rel="noreferrer"
+              >
+                old-nine-next.vercel.app
               </a>
               .
             </p>

@@ -1,56 +1,44 @@
 import { EMAIL, GITHUB, TELEFOON } from "./content";
 
-const gegevens = [
+type Gegeven = { key: string; waarde: string; href?: string; extern?: boolean; download?: boolean };
+
+const gegevens: Gegeven[] = [
   { key: "Naam", waarde: "Willem de Wit" },
   { key: "Woonplaats", waarde: "Eindhoven" },
   { key: "Telefoon", waarde: TELEFOON },
+  { key: "E-mail", waarde: EMAIL, href: `mailto:${EMAIL}` },
+  { key: "GitHub", waarde: "github.com/Willemilk", href: GITHUB, extern: true },
+  { key: "Rijbewijs", waarde: "Ja" },
+  { key: "Talen", waarde: "Nederlands (vloeiend), Engels (vloeiend)" },
+  { key: "Cv", waarde: "Download cv", href: "/cv-willem-de-wit.pdf", download: true },
 ];
 
 export default function SiteEnd() {
   return (
     <section className="contact" id="contact">
       <div className="reveal">
-        <p className="label">Contact</p>
+        <p className="label">Gegevens</p>
 
         <div className="dataLijst">
           {gegevens.map((g) => (
             <div className="dataRij" key={g.key}>
               <p className="dataKey">{g.key}</p>
-              <p className="dataVal">{g.waarde}</p>
+              <p className="dataVal">
+                {g.href ? (
+                  <a
+                    className="tekstLink"
+                    href={g.href}
+                    {...(g.extern ? { target: "_blank", rel: "noreferrer" } : {})}
+                    {...(g.download ? { download: true } : {})}
+                  >
+                    {g.waarde}
+                  </a>
+                ) : (
+                  g.waarde
+                )}
+              </p>
             </div>
           ))}
-
-          <div className="dataRij">
-            <p className="dataKey">E-mail</p>
-            <p className="dataVal">
-              <a className="tekstLink" href={`mailto:${EMAIL}`}>
-                {EMAIL}
-              </a>
-            </p>
-          </div>
-
-          <div className="dataRij">
-            <p className="dataKey">GitHub</p>
-            <p className="dataVal">
-              <a
-                className="tekstLink"
-                href={GITHUB}
-                target="_blank"
-                rel="noreferrer"
-              >
-                github.com/Willemilk
-              </a>
-            </p>
-          </div>
-
-          <div className="dataRij">
-            <p className="dataKey">Cv</p>
-            <p className="dataVal">
-              <a className="tekstLink" href="/cv-willem-de-wit.pdf" download>
-                Download cv
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </section>
