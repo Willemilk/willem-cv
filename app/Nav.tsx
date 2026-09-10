@@ -4,10 +4,10 @@ type SectieLink = { href: string; label: string };
 
 export default function Nav({
   huidig,
-  secties,
+  secties = [],
 }: {
-  huidig: "home" | "dev";
-  secties: SectieLink[];
+  huidig?: "home" | "dev";
+  secties?: SectieLink[];
 }) {
   return (
     <nav className="nav">
@@ -30,7 +30,7 @@ export default function Nav({
             className={huidig === "home" ? "navPage navPageOn" : "navPage"}
             href="/"
           >
-            Over mij
+            Start
           </Link>
           <Link
             className={huidig === "dev" ? "navPage navPageOn" : "navPage"}

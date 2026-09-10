@@ -38,13 +38,15 @@ herkent Next.js zelf. Elke push naar `main` deployt automatisch.
 
 ## Waar staat wat
 
-- `app/content.ts` — alle gegevens: telefoon, e-mail, GitHub, traject en
-  vaardigheden. Tekst aanpassen doe je hier.
+- `app/content.ts` — alle gegevens: telefoon, e-mail, GitHub, Old Nine-link,
+  traject en vaardigheden. Tekst aanpassen doe je hier.
 - `app/page.tsx` — de startpagina
 - `app/development/page.tsx` — de development pagina
 - `app/Nav.tsx` — de balk bovenin, gedeeld door beide pagina's
 - `app/SiteEnd.tsx` — de gegevenslijst onderaan, gedeeld door beide pagina's
-- `app/globals.css` — kleuren, lettertypes, animaties (variabelen bovenaan)
+- `app/not-found.tsx` — de 404-pagina
+- `app/layout.tsx` — lettertypes (via next/font, zonder verzoeken naar Google) en metadata
+- `app/globals.css` — kleuren en animaties (variabelen bovenaan)
 - `public/` — foto en CV-PDF
 - `cv/cv.html` — bron van het CV-PDF. Na een aanpassing opnieuw printen:
 

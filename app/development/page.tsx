@@ -24,7 +24,6 @@ export default function Development() {
       />
 
       <div className="wrap">
-        {/* ---------------- Kop ---------------- */}
         <header className="pageHead">
           <p className="label up">Development</p>
           <h1
@@ -41,7 +40,6 @@ export default function Development() {
           </p>
         </header>
 
-        {/* ---------------- Projecten ---------------- */}
         <section className="section" id="projecten">
           <div className="reveal">
             <p className="label">Projecten</p>
@@ -73,7 +71,6 @@ export default function Development() {
           </div>
         </section>
 
-        {/* ---------------- Vaardigheden ---------------- */}
         <section className="section" id="vaardigheden">
           <div className="reveal">
             <p className="label">Vaardigheden</p>

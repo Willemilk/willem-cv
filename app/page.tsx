@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "./Nav";
 import SiteEnd from "./SiteEnd";
@@ -19,7 +18,6 @@ export default function Home() {
       />
 
       <div className="wrap">
-        {/* ---------------- Hero ---------------- */}
         <header className="hero">
           <div className="heroTop">
             <span>Eindhoven, NL</span>
@@ -29,7 +27,7 @@ export default function Home() {
           <h1 className="heroName">
             <span>
               <b style={{ "--d": "80ms" } as React.CSSProperties}>Willem</b>
-            </span>
+            </span>{" "}
             <span>
               <b style={{ "--d": "200ms" } as React.CSSProperties}>de Wit</b>
             </span>
@@ -55,12 +53,17 @@ export default function Home() {
               className="heroPhoto up"
               style={{ "--d": "380ms" } as React.CSSProperties}
             >
-              <img src="/cvimage.jpg" alt="Portretfoto van Willem de Wit" />
+              <Image
+                src="/cvimage.jpg"
+                alt="Portretfoto van Willem de Wit"
+                fill
+                preload
+                sizes="(max-width: 900px) 280px, 38vw"
+              />
             </div>
           </div>
         </header>
 
-        {/* ---------------- Over mij ---------------- */}
         <section className="section" id="over">
           <div className="reveal">
             <p className="label">Over mij</p>
@@ -78,7 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------------- Traject ---------------- */}
         <section className="section" id="traject">
           <div className="reveal">
             <p className="label">Traject</p>
@@ -100,7 +102,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------------- Naar de development pagina ---------------- */}
         <section className="section">
           <p className="proza reveal">
             Wat ik bouw staat op de{" "}
