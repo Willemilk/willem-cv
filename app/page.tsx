@@ -38,7 +38,7 @@ export default function Home() {
           <div className="heroGrid">
             <div className="up" style={{ "--d": "480ms" } as React.CSSProperties}>
               <p className="heroRole">
-                Derdejaars student Software Development
+                Vierdejaars student Software Development
               </p>
               <p className="heroText">Ik bouw websites en webshops.</p>
               <div className="heroBtns">
@@ -67,7 +67,7 @@ export default function Home() {
             <h2 className="h2">Wie ik ben</h2>
 
             <p className="proza">
-              Ik ben Willem, ik woon in Eindhoven en ik zit in het derde jaar
+              Ik ben Willem, ik woon in Eindhoven en ik zit in het vierde jaar
               van de opleiding Software Development op Summa ICT. Daarnaast ben
               ik bijna drie jaar vakkenvuller geweest bij Albert Heijn.
             </p>

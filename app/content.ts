@@ -5,7 +5,7 @@ export const GITHUB = "https://github.com/Willemilk";
 export const traject = [
   {
     titel: "Software Development (MBO N4)",
-    sub: "Summa ICT, Eindhoven · leerjaar 3",
+    sub: "Summa ICT, Eindhoven · leerjaar 4",
     datum: "2023 — heden",
     body: "Programmeren met onder andere C#, PHP en databases, en werken aan echte projecten voor opdrachtgevers.",
   },

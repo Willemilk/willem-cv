@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Willem de Wit — Eindhoven",
   description:
-    "Willem de Wit uit Eindhoven. Derdejaars student Software Development op Summa ICT.",
+    "Willem de Wit uit Eindhoven. Vierdejaars student Software Development op Summa ICT.",
 };
 
 export default function RootLayout({
